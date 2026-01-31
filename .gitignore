@@ -1,0 +1,6 @@
+__pycache__/
+*.py[cod]
+*.pkl
+processed_files/
+enhanced_files/
+.streamlit/
