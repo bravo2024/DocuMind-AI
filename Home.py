@@ -3,33 +3,27 @@ import streamlit as st
 st.set_page_config(
     page_title="DocuMind AI",
     page_icon="🧠",
-    layout="wide"
+    layout="centered"
 )
 
 st.title("🧠 DocuMind AI")
-st.subheader("Intelligent Document Processing Suite")
+st.caption("Intelligent Document Processing Suite")
 
-st.markdown("""
-### Welcome to the Future of Document Management 🚀
+st.markdown("---")
 
-**DocuMind AI** leverages advanced Machine Learning and Computer Vision to optimize your workflow.
+col1, col2 = st.columns(2)
 
----
+with col1:
+    st.image("https://img.icons8.com/color/96/compress.png", width=64)
+    st.subheader("Smart Compressor")
+    st.markdown("ML-powered reduction that preserves quality.")
+    st.page_link("pages/1_📉_Smart_Compressor.py", label="Launch Compressor", icon="📉", use_container_width=True)
 
-### 📂 Select a Module from the Sidebar:
+with col2:
+    st.image("https://img.icons8.com/color/96/image.png", width=64)
+    st.subheader("Image Enhancer")
+    st.markdown("CV-powered restoration for scanned docs.")
+    st.page_link("pages/2_✨_Image_Enhancer.py", label="Launch Enhancer", icon="✨", use_container_width=True)
 
-#### 1. 📉 [Smart Compressor](/Smart_Compressor)
-> **"The Brain"**
-> Uses a **Random Forest Classifier** to analyze document structure (text vs. images) and automatically selects the best compression strategy.
-> *   **Best for:** Reducing file size while preserving quality.
-> *   **Tech:** Scikit-Learn, PyMuPDF.
-
-#### 2. ✨ [Image Enhancer](/Image_Enhancer)
-> **"The Eye"**
-> Uses **Computer Vision (OpenCV)** to detect brightness, contrast, and blur levels, then automatically restores scanned documents to perfection.
-> *   **Best for:** Cleaning up dark, blurry, or old scans.
-> *   **Tech:** OpenCV, PIL.
-
----
-*Open Source Project for AI/ML Portfolio.*
-""")
+st.markdown("---")
+st.info("🔒 **Privacy First:** Files are processed locally in memory and auto-deleted after 1 hour.")
